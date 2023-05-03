@@ -41,10 +41,10 @@ function App() {
       onChange={handleChange}
       />
       <button onClick={handleToggle}>Show</button>
-      <Modal toggle={isToggled} >
+      <Modal toggle={isToggled} ontoggle={handleToggle}>
         <div className='container'>
             <img src={Green} alt="" />
-            <h2>test</h2>
+            <h2>this is the modal window</h2>
         </div>
       </Modal>
       <Card />

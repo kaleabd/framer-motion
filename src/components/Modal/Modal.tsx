@@ -1,11 +1,13 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import './Modal.css'
 type ModalProps = {
   toggle: boolean;
+  ontoggle: () => void;
   children: React.ReactNode;
 };
 
-const Modal: React.FC<ModalProps> = ({ toggle, children }) => {
+const Modal: React.FC<ModalProps> = ({ toggle,ontoggle, children }) => {
   return (
     <AnimatePresence>
       {toggle && (
@@ -20,8 +22,10 @@ const Modal: React.FC<ModalProps> = ({ toggle, children }) => {
                 exit={{y: 30}}
                 className="modal"
             >
+                <button onClick={ontoggle}>Close</button>
                 {children}
             </motion.div>
+            <div className='overlay'></div>
         </motion.div>
       )}
     </AnimatePresence>
