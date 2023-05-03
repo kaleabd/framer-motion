@@ -4,6 +4,17 @@ import './Accordion.css'
 
 // to make this component reusable we can pass for example {title, description} in the props
 // and use it accordingly
+
+const variants = {
+    open:{
+        opacity: 1,
+        height: 'auto'
+    },
+    closed: {
+        opacity: 0,
+        height: 0
+    }
+}
 const Accordion = () => {
     const [show, setShow] = useState(false)
     const handleShow = () => {
@@ -17,18 +28,10 @@ const Accordion = () => {
             {
                 show && (
                     <motion.div
-                    initial={{
-                        opacity: 0,
-                        height: 0
-                    }}
-                    animate={{
-                        opacity: 1,
-                        height: 'auto'
-                    }}
-                    exit={{
-                        opacity: 0,
-                        height: 0
-                    }}
+                    variants={variants}
+                    initial="closed"
+                    animate="open"
+                    exit="closed"
                     style={{
                         overflow: 'hidden',
                     }}

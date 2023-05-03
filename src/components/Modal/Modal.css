@@ -1,3 +1,14 @@
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100vh;
+    background-color: #00000054;
+    z-index: 50;
+    
+}
 .modal{
     position: fixed;
     top: 15%;
@@ -5,13 +16,4 @@
 }
 .modal button {
     float: right;
-}
-.overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #000;
-    opacity: 50%;
 }
