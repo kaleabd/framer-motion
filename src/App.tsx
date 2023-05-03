@@ -7,6 +7,18 @@ import Modal from './components/Modal/Modal'
 import Green from './assets/green.png'
 import Accordion from './components/Accordion/Accordion'
 
+
+/*
+ => By default all transforms are 3d
+ => Yous should only animate transforms and opacity
+ => Translate shortcuts: x,y,z
+ => Translate: translateX, translateY, translateZ
+ => Scale: scaleX, scaleY, scaleZ
+ => Rotate: rotate, rotateX, rotateY, rotateZ
+ => Skew: skewX, skewY, skewZ
+*/
+
+
 function App() {
   const [value, setValue] = useState(0)
   const [isToggled, setToggled] = useState(false)
@@ -47,12 +59,29 @@ function App() {
       <button onClick={handleToggle}>Show Modal Window</button>
       {/* accordion */}
       <Accordion />
+      {/* modal */}
       <Modal toggle={isToggled} ontoggle={handleToggle}>
         <div className='container'>
             <img src={Green} alt="" />
             <h2>this is the modal window</h2>
         </div>
       </Modal>
+      {/* keyframes */}
+      <motion.div
+      animate = {{
+        opacity: [0, 1, 0, 1]
+      }}
+      transition={{
+        duration: 5, time: [0, 0.2, 0.3, 1]
+      }}
+      >
+          <h2>
+            I'M THE ANIMATION BABY!
+          </h2>
+      </motion.div>
+
+
+      {/* the cards */}
       <Card />
     </motion.div>
   )
