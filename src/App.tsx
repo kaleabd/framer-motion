@@ -6,6 +6,8 @@ import './App.css'
 import Modal from './components/Modal/Modal'
 import Green from './assets/green.png'
 import Accordion from './components/Accordion/Accordion'
+import Sidebar from './components/Sidebar/Sidebar'
+import Menu from './assets/menu.svg'
 
 
 /*
@@ -22,12 +24,16 @@ import Accordion from './components/Accordion/Accordion'
 function App() {
   const [value, setValue] = useState(0)
   const [isToggled, setToggled] = useState(false)
+  const [isNavopen, setisNavopen] = useState(false)
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(Number(event.target.value))
   }
   const handleToggle = () => {
     setToggled(prev => !prev)
+  }
+  const handleNavopen = () => {
+    setisNavopen(prev => !prev)
   }
   return (
     <motion.div
@@ -43,7 +49,11 @@ function App() {
      }}
     transition = {{ duration: 1 }}
     className="app-container">
-      <Navbar />
+      {/* <Navbar /> */}
+      <div style={{display: "flex", justifyContent: "space-between"}}>
+        <img src={Menu} alt="" style={{ width: "70px"}} onClick={handleNavopen}/>
+        <h2>about us</h2>
+      </div>
       <motion.h2
         initial={{x: 0}}
         animate={{x:value + "px"}}
@@ -79,8 +89,8 @@ function App() {
             I'M THE ANIMATION BABY!
           </h2>
       </motion.div>
-
-
+      {/* sidebar */}
+      <Sidebar isNavopen={isNavopen} setNavOpen= {handleNavopen}/>
       {/* the cards */}
       <Card />
     </motion.div>
