@@ -1,0 +1,10 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 4rem;
+    border-bottom: 1px solid black;
+    margin-bottom: 2rem;
+}
+nav img{
+    width: 75px;
+}
