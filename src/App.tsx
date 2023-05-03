@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar"
 import './App.css'
 import Modal from './components/Modal/Modal'
 import Green from './assets/green.png'
+import Accordion from './components/Accordion/Accordion'
 
 function App() {
   const [value, setValue] = useState(0)
@@ -31,16 +32,21 @@ function App() {
     transition = {{ duration: 1 }}
     className="app-container">
       <Navbar />
-      <h2>
+      <motion.h2
+        initial={{x: 0}}
+        animate={{x:value + "px"}}
+      >
         test text
-      </h2>
+      </motion.h2>
       <input type="range" 
        max="100"
        min="-100"
       value={value}
       onChange={handleChange}
       />
-      <button onClick={handleToggle}>Show</button>
+      <button onClick={handleToggle}>Show Modal Window</button>
+      {/* accordion */}
+      <Accordion />
       <Modal toggle={isToggled} ontoggle={handleToggle}>
         <div className='container'>
             <img src={Green} alt="" />
