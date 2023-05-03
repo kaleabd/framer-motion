@@ -22,21 +22,29 @@ interface SideProp {
 const Sidebar = ({isNavopen, setNavOpen}: SideProp) => {
     console.log(isNavopen)
   return (
+
     <motion.div
     variants={variants}
     initial="closed"    
     animate={isNavopen ? "open" : "closed"}
     exit="closed"
-    transition={{ duration: .4 }}
+    transition={{ damping: 300 }}
     className={`navbar-container`}
     >
-      <h2>Sidebar</h2>
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-      </ul>
-      <button onClick={setNavOpen}>Close</button>
+        {
+            isNavopen && (
+                <div>
+                    <h2>Sidebar</h2>
+                    <ul>
+                      <li>Item 1</li>
+                      <li>Item 2</li>
+                      <li>Item 3</li>
+                    </ul>
+                    <button onClick={setNavOpen}>Close</button>
+                </div>
+            )
+        }
+
     </motion.div>
   )
 }

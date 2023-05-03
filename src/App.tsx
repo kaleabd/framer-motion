@@ -89,10 +89,8 @@ function App() {
             I'M THE ANIMATION BABY!
           </h2>
       </motion.div>
-      {
         // sidebar
-        isNavopen && <Sidebar isNavopen={isNavopen} setNavOpen= {handleNavopen}/>
-      }
+        <Sidebar isNavopen={isNavopen} setNavOpen= {handleNavopen}/>
       {/* the cards */}
       <Card />
     </motion.div>
