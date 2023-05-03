@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import './Accordion.css'
+
+// to make this component reusable we can pass for example {title, description} in the props
+// and use it accordingly
 const Accordion = () => {
     const [show, setShow] = useState(false)
     const handleShow = () => {
@@ -25,8 +29,14 @@ const Accordion = () => {
                         opacity: 0,
                         height: 0
                     }}
+                    style={{
+                        overflow: 'hidden',
+                    }}
                     >
-                        <p>
+                        <p className='para'>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quos, maxime dolores ea vel ad.
+                            Vero ut iure vitae. Placeat veniam voluptate exercitationem rem obcaecati dicta pariatur,
+                            rerum maiores magni.
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quos, maxime dolores ea vel ad.
                             Vero ut iure vitae. Placeat veniam voluptate exercitationem rem obcaecati dicta pariatur,
                             rerum maiores magni.
