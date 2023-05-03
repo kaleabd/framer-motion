@@ -3,16 +3,18 @@ import { useState } from 'react'
 import Card from "./components/Card/Card"
 import Navbar from "./components/Navbar/Navbar"
 import './App.css'
+import Modal from './components/Modal/Modal'
+import Green from './assets/green.png'
 
 function App() {
   const [value, setValue] = useState(0)
-  const [isToggled, setToggled] = useState(0)
+  const [isToggled, setToggled] = useState(false)
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(Number(event.target.value))
   }
   const handleToggle = () => {
-    setToggled(prev => prev ? 0 : 1)
+    setToggled(prev => !prev)
   }
   return (
     <motion.div
@@ -29,15 +31,9 @@ function App() {
     transition = {{ duration: 1 }}
     className="app-container">
       <Navbar />
-      <motion.h2
-
-      animate={{
-        opacity: isToggled,
-        x: value + "px"
-      }}
-      >
+      <h2>
         test text
-      </motion.h2>
+      </h2>
       <input type="range" 
        max="100"
        min="-100"
@@ -45,6 +41,12 @@ function App() {
       onChange={handleChange}
       />
       <button onClick={handleToggle}>Show</button>
+      <Modal toggle={isToggled} >
+        <div className='container'>
+            <img src={Green} alt="" />
+            <h2>test</h2>
+        </div>
+      </Modal>
       <Card />
     </motion.div>
   )
