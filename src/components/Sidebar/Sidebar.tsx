@@ -9,12 +9,11 @@ const variants = {
     },
     closed: {
         opacity: 0,
-        x: "-20%",
+        x: -250,
         y: 0
 
     }
 }
-
 
 interface SideProp {
     isNavopen: boolean
@@ -23,26 +22,22 @@ interface SideProp {
 const Sidebar = ({isNavopen, setNavOpen}: SideProp) => {
     console.log(isNavopen)
   return (
-    <>
     <motion.div
     variants={variants}
-    initial="closed"
+    initial="closed"    
     animate={isNavopen ? "open" : "closed"}
     exit="closed"
+    transition={{ duration: .4 }}
     className={`navbar-container`}
     >
-        <div className='list'>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">List</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <button onClick={setNavOpen}>Close</button>
-        </div>
+      <h2>Sidebar</h2>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+      <button onClick={setNavOpen}>Close</button>
     </motion.div>
-    
-    </>
   )
 }
 
