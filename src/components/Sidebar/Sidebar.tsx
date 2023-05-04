@@ -9,13 +9,17 @@ const variants = {
     closed: {
         opacity: 0,
         x: -300,
-
+        transition: {delay: .2}
     }
 }
 
 const liVariants = {
-    open: {y:0, opacity: 1, transition: {delay: .2}},
+    open: {y:0, opacity: 1},
     closed: {y: -20, opacity: 0},
+}
+const ulVariants = {
+    open: {transition: {staggerChildren: .3}},
+    closed: {},
 }
 
 interface SideProp {
@@ -40,7 +44,7 @@ const Sidebar = ({isNavopen, setNavOpen}: SideProp) => {
             isNavopen && (
                 <div>
                     <h2>Sidebar</h2>
-                    <ul>
+                    <motion.ul variants={ulVariants}>
 
                         {
                             links.map((link, index) => {
@@ -54,7 +58,7 @@ const Sidebar = ({isNavopen, setNavOpen}: SideProp) => {
                                 )
                             })
                         }
-                    </ul>
+                    </motion.ul>
                     <button onClick={setNavOpen}>Close</button>
                 </div>
             )
