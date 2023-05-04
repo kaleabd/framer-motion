@@ -18,8 +18,18 @@ const liVariants = {
     closed: {y: -20, opacity: 0},
 }
 const ulVariants = {
-    open: {transition: {staggerChildren: .3}},
-    closed: {},
+    
+    open: {
+        scale: 1.05,
+        transition: {
+        staggerChildren: .3,
+        delayChildren: 0.2,
+        staggerDirection: -1, // forward 1, backwards -1
+        when: "afterChildren"
+    }},
+    closed: {
+        scale: 1
+    },
 }
 
 interface SideProp {
