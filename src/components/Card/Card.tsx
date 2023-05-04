@@ -31,7 +31,11 @@ function Card() {
             <h2>some texts here</h2>
         </motion.div>
         <motion.div
-        whileHover={{scale: 1.1}}
+        drag="x"
+        dragConstraints={{
+            left: 0,
+            right: 0,
+        }}
         className='container'>
             <img src={Green} alt="" />
             <h2>some texts here</h2>
