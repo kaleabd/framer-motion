@@ -5,14 +5,17 @@ const variants = {
     open:{
         opacity: 1,
         x: 0,
-        y: 0
     },
     closed: {
         opacity: 0,
-        x: -250,
-        y: 0
+        x: -300,
 
     }
+}
+
+const liVariants = {
+    open: {y:0, opacity: 1, transition: {delay: .2}},
+    closed: {y: -20, opacity: 0},
 }
 
 interface SideProp {
@@ -21,6 +24,8 @@ interface SideProp {
 }
 const Sidebar = ({isNavopen, setNavOpen}: SideProp) => {
     console.log(isNavopen)
+
+    const links = ['Items1', 'Items2', 'Items3']
   return (
 
     <motion.div
@@ -36,9 +41,19 @@ const Sidebar = ({isNavopen, setNavOpen}: SideProp) => {
                 <div>
                     <h2>Sidebar</h2>
                     <ul>
-                      <li>Item 1</li>
-                      <li>Item 2</li>
-                      <li>Item 3</li>
+
+                        {
+                            links.map((link, index) => {
+                                return (
+                                    <motion.li
+                                    variants={liVariants}
+                                    key={index}
+                                    >
+                                        {link}
+                                    </motion.li>
+                                )
+                            })
+                        }
                     </ul>
                     <button onClick={setNavOpen}>Close</button>
                 </div>

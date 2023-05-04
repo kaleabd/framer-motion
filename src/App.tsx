@@ -1,7 +1,6 @@
 import {motion} from 'framer-motion'
 import { useState } from 'react'
 import Card from "./components/Card/Card"
-import Navbar from "./components/Navbar/Navbar"
 import './App.css'
 import Modal from './components/Modal/Modal'
 import Green from './assets/green.png'
@@ -88,9 +87,10 @@ function App() {
           <h2>
             I'M THE ANIMATION BABY!
           </h2>
+      
       </motion.div>
-        // sidebar
-        <Sidebar isNavopen={isNavopen} setNavOpen= {handleNavopen}/>
+      {/* sidebar */}
+      <Sidebar isNavopen={isNavopen} setNavOpen= {handleNavopen}/>
       {/* the cards */}
       <Card />
     </motion.div>
