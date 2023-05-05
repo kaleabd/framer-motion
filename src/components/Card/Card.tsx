@@ -3,10 +3,17 @@ import Black from '../../assets/black.png'
 import Blue from '../../assets/blue.png'
 import Green from '../../assets/green.png'
 import Purple from '../../assets/purp.png'
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useTransform } from 'framer-motion'
 
 
 function Card() {
+    // USE MOTION VALUE'
+// =>  is a React hook that is used to create a mutable,
+//     animatable value that can be used to drive animations and update the
+//     properties of motion components.
+  const x = useMotionValue(0)
+  const opacity = useTransform(x,[-200,0,200],[0,1,0])
+
   return (
     <div className='main-container'>
         <motion.div
@@ -31,10 +38,15 @@ function Card() {
             <h2>some texts here</h2>
         </motion.div>
         <motion.div
+
         drag="x"
         dragConstraints={{
             left: 0,
             right: 0,
+        }}
+        style={{
+            x,
+            opacity
         }}
         className='container'>
             <img src={Green} alt="" />

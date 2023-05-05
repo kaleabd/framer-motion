@@ -25,6 +25,7 @@ function App() {
   const [isToggled, setToggled] = useState(false)
   const [isNavopen, setisNavopen] = useState(false)
 
+  
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(Number(event.target.value))
   }
