@@ -52,7 +52,8 @@ function Card() {
             >
                 <h2>Drag to the right dismiss! the below card</h2>
                 <motion.div
-                onDragEnd={(event,info) => {  
+                onDragEnd={(event,info) => { 
+                    console.log(event) 
                     if ( Math.abs(info.point.x) > 200){
                         setIsCardActive(false)
                     }

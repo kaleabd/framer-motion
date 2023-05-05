@@ -7,6 +7,7 @@ import Green from './assets/green.png'
 import Accordion from './components/Accordion/Accordion'
 import Sidebar from './components/Sidebar/Sidebar'
 import Menu from './assets/menu.svg'
+import Squares from './components/Squares/Squares'
 
 
 /*
@@ -67,6 +68,8 @@ function App() {
       onChange={handleChange}
       />
       <button onClick={handleToggle}>Show Modal Window</button>
+      {/* Position transition */}
+      <Squares />
       {/* accordion */}
       <Accordion />
       {/* modal */}
