@@ -8,6 +8,7 @@ import Accordion from './components/Accordion/Accordion'
 import Sidebar from './components/Sidebar/Sidebar'
 import Menu from './assets/menu.svg'
 import Squares from './components/Squares/Squares'
+import SlideShow from './components/SlideShow/SlideShow'
 
 
 /*
@@ -70,6 +71,9 @@ function App() {
       <button onClick={handleToggle}>Show Modal Window</button>
       {/* Position transition */}
       <Squares />
+      {/* slideshow */}
+      <h2>slide show slide to swipe the slides!</h2>
+      <SlideShow />
       {/* accordion */}
       <Accordion />
       {/* modal */}
