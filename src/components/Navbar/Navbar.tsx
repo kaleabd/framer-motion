@@ -1,10 +1,11 @@
-import Menu from '../../assets/menu.svg'
 import './Navbar.css'
+import { Link } from'react-router-dom'
+
 function Navbar() {
   return (
     <nav>
-        <img src={Menu} alt="" className='menu'/>
-        <h2>About us</h2>
+        <Link to='/'>Home</Link>
+        <Link to='/about'>About</Link>
     </nav>
   )
 }

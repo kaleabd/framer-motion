@@ -1,0 +1,13 @@
+.app-container{
+    position: relative;
+    width: 100%;
+  }
+  .container{
+    background-color: white;
+  }
+  .links {
+    font-size: 2rem;
+    text-decoration: none;
+    color: black;
+  }
+  
