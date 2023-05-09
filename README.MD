@@ -67,4 +67,4 @@ For more information on Framer Motion, be sure to check out the official [docume
 
 ## After completing this where to go
 
-- I highly recommend you to chekc Pop Motion [https://popmotion.io/]
+- I highly recommend you to check [Pop Motion](https://popmotion.io/)
